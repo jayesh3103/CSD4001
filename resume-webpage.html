@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayesh Muley - Tech Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .profile-photo {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .circular-photo {
+        width: 150px; 
+        height: 150px; 
+        border-radius: 50%; 
+        border: 4px solid var(--accent-color); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        object-fit: cover; 
+    }
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-color: #f5f6fa;
+            --text-color: #2d3436;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-item img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .education-item, .certification-item {
+            margin-bottom: 1rem;
+        }
+
+        .education-item h3, .certification-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project {
+            margin-bottom: 2rem;
+        }
+
+        .project h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .coding-platforms {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .platform {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .social-icons {
+                gap: 1rem;
+            }
+        }
+        .project-images {
+    display: flex;
+    gap: 1rem; /* Space between images */
+    justify-content: center; /* Center align images */
+    margin-top: 1rem;
+}
+
+.project-image {
+    width: 45%; /* Set the width to fit two images side-by-side */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.project-image:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Jayesh Muley</h1>
+            <div class="profile-photo">
+                <img src="images/jayesh.png" alt="Jayesh Muley" class="circular-photo">
+            </div>
+            <div class="contact-info">
+                <a href="mailto:jayeshmuley31@gmail.com" class="contact-item">
+                    <img src="images/email.jpg" alt="Email Icon">
+                    jayeshmuley31@gmail.com
+                </a>
+                <a href="tel:+918200690222" class="contact-item">
+                    <img src="images/phone.png" alt="Phone Icon">
+                    +91 82006 90222
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mr-jayeshmuley" class="social-icon" title="LinkedIn" target="_blank">
+                    <img src="images/linkedin.png" alt="LinkedIn Logo">
+                </a>
+                <a href="https://github.com/jayesh3103" class="social-icon" title="GitHub" target="_blank">
+                    <img src="images/github.png" alt="GitHub Logo">
+                </a>
+                <a href="https://www.geeksforgeeks.org/user/jayeshmuley" class="social-icon" title="GeeksforGeeks" target="_blank">
+                    <img src="images/gfg.png" alt="GeeksforGeeks Logo">
+                </a>
+            </div>
+        </div>
+    </header> 
+
+    <div class="container">
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Vellore Institute of Technology, Bhopal</h3>
+                <p>Integrated MTech Artificial Intelligence | CGPA: 9.08 | 2022-2027</p>
+            </div>
+            <div class="education-item">
+                <h3>Puna International School, Ahmedabad</h3>
+                <p>Class 12th | 86% | 2021-2022</p>
+            </div>
+            <div class="education-item">
+                <h3>Vedant International School, Ahmedabad</h3>
+                <p>Class 10th | 97% | 2019-2020</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <p>Python3, C, C++, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies & Frameworks</h3>
+                    <p>HTML5, CSS3, Bootstrap, React JS, Node JS, Express</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Nutrivista</h3>
+                <p>A comprehensive full-stack food delivery website with order management and secure payment integration.NutriVista is an AI-powered food ordering platform that transforms the dining experience by providing personalized meal recommendations tailored to dietary preferences and calorie needs. It offers a seamless user experience through an interactive AI chatbot, enabling real-time customization and fostering a healthier lifestyle. 🌱🍕🤖
+
+                    This project was showcased at VIT Bhopal's academic exhibition, reflecting our team's dedication to innovation and technical expertise.</p>
+                   
+                    <div class="tech-stack">
+                    <span class="tech-badge">React JS</span>
+                    <span class="tech-badge">Node JS</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Stripe</span>
+                </div>
+                <div class="project-images">
+                    <img src="images/image1.png" alt="Nutrivista Dashboard" class="project-image">
+                    <img src="images/image2.png" alt="Nutrivista ChatBot" class="project-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Coding Achievements</h2>
+            <div class="coding-platforms">
+                <div class="platform">
+                    <h3>LeetCode</h3>
+                    <p>1650+ Rating</p>
+                    <p>400+ problems solved</p>
+                    <p>275 Daily Problem Streak</p>
+                </div>
+                <div class="platform">
+                    <h3>GeeksforGeeks</h3>
+                    <p>Institution Rank - 38</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Certifications</h2>
+            <div class="certification-item">
+                <h3>Google</h3>
+                <ul>
+                    <li>The Bits & Bytes of Computer Networking</li>
+                    <li>Data Analytics Specialization</li>
+                    <li>Advanced Data Analytics Specialization</li>
+                    <li>Cyber Security Specialization</li>
+                </ul>
+            </div>
+            <div class="certification-item">
+                <h3>University of Michigan</h3>
+                <ul>
+                    <li>Python Data Structures</li>
+                    <li>Applied Machine Learning in Python</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
